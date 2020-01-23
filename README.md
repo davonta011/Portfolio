@@ -10,3 +10,5 @@ HomePage: Will have a login/registration link, as well as navigation to other we
   
   
 
+resources
+https://www.youtube.com/watch?v=Nehk4tBxD4o
