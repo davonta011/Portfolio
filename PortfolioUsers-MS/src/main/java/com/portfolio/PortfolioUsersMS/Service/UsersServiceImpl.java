@@ -18,6 +18,7 @@ public class UsersServiceImpl implements UsersService {
     public UsersServiceImpl(UserRepository userRepository){
         this.userRepository = userRepository;
     }
+
     @Override
     public UserDto createUser(UserDto userDetails) {
         userDetails.setUserId(UUID.randomUUID().toString());
@@ -27,6 +28,9 @@ public class UsersServiceImpl implements UsersService {
         UserEntity userEntity = modelMapper.map(userDetails, UserEntity.class);
         userEntity.setEncryptedPassword("test");
         userRepository.save(userEntity);
-        return null;
+
+        UserDto returnValue = modelMapper.map(userEntity, UserDto.class);
+
+        return returnValue;
     }
 }
